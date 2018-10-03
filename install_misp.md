@@ -182,6 +182,11 @@ a2ensite default-ssl
 pear channel-update pear.php.net
 pear install Crypt_GPG
 ```
+### Change salt in the PHP configuaration file
+```
+vi /var/www/MISP/app/Config/config.php
+/salt
+```
 
 ### Switch to python3 by default (optional)
 
