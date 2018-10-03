@@ -3,7 +3,7 @@ MISP Automation with Python or Curl
 
 ## Export ids rules from events
 ### python
-[Sample code for python2]()
+[Sample code for python2](https://github.com/ahmetpergamum/cti/blob/master/exportEvents.py)
 ### curl
 Sample curl command
 ```
