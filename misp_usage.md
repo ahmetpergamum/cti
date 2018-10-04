@@ -140,3 +140,27 @@ To change the listening server address and port
 ```
 misp-modules -l <ip-add> -p <port-add>
 ```
+#### MISP footers and logos
+There are optional settings under `Server Settings >  Misp settings tab`
+```
+Optional	MISP.footermidleft	This is an initial install	Footer text prepending the "Powered by MISP" text.	
+Optional	MISP.footermidright	Please configure and harden accordingly	Footer text following the "Powered by MISP" text.
+Optional	MISP.footer_logo		If set, this setting allows you to display a logo on the right side of the footer. Upload it as a custom image in the file management tool.
+```
+#### Email alerts with extended information
+If you’re using encryption : the subject will not be encrypted. Be aware that you might leak some sensitive information this way.
+```
+$CAKE Admin setSetting "MISP.extended_alert_subject" true
+```
+#### Title setting
+```
+$CAKE Admin setSetting "MISP.title_text" "ABCD"
+```
+
+#### Schedule tasks with cron
+Sample console commands for fetching and caching feeds
+```
+MISP/app/Console/cake Server cacheFeed [user_id] [feed_id|all|csv|text|misp]
+MISP/app/Console/cake Server fetchFeed [user_id] [feed_id|all|csv|text|misp]
+```
+
