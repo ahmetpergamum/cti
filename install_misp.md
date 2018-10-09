@@ -99,6 +99,23 @@ ufw delete <# of rule>
 ```
 apt install sudo
 ```
+### Install cron for setting cron jobs
+
+Create a crontab for your current user
+```
+crontab -e <username>
+```
+If this command fails, it's likely that cron is not installed.
+```
+sudo apt update
+sudo apt install cron
+```
+### Add user misp for cli administration
+Added `misp` user to sudo and www-data groups
+```
+useradd -g sudo,www-data -m -s /bin/bash misp
+passwd misp
+```
 
 ### Install etckeeper (optional)
 

@@ -158,9 +158,28 @@ $CAKE Admin setSetting "MISP.title_text" "ABCD"
 ```
 
 #### Schedule tasks with cron
+Cron syntax
+```
+.---------------- minute (0 - 59)
+|  .------------- hour (0 - 23)
+|  |  .---------- day of month (1 - 31)
+|  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+|  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7)  OR sun,mon,tue,wed,thu,fri,sat
+|  |  |  |  |
+*  *  *  *  *  command to be executed
+```
+Open crontab and edit file
+```
+crontab -e <user-name>
+```
+Add line above to run script at specific time on each day
+```
+45 11 * * *  /home/misp/fetchCachePy.sh
+```
+
+#### Fetchong and caching feeds from command line
 Sample console commands for fetching and caching feeds
 ```
 MISP/app/Console/cake Server cacheFeed [user_id] [feed_id|all|csv|text|misp]
 MISP/app/Console/cake Server fetchFeed [user_id] [feed_id|all|csv|text|misp]
 ```
-
